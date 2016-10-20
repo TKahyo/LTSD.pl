@@ -48,7 +48,7 @@ my $thresh_LTR_length = 4;
 my $gap_LTR_int_min = -1;
 my $gap_LTR_int_max = 100;
 my $thresh_score_proviral_TSD = 0.5;
-my $iden_ratio = 0.75;
+my $identity = 0.75;
 
 
 my $bed_file = shift @ARGV;
@@ -218,7 +218,7 @@ while(<$in>){
 		$count++;
 	}
 	print $out "$_\t$count\n";
-	if($score >= $iden_ratio and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) {
+	if($score >= $identity and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) {
 		print $out2 "$_\t$count\n";
 	}
 }
@@ -504,7 +504,7 @@ sub tsd {
 		
 		push @{$hash_max_seq->{$n}}, ($max_seq1, $max_seq2);
 		## processing in the case of $n<=3 && $max_1==1
-		if($n <= 3 and $max_i == 1 and $max >= $iden_ratio) {
+		if($n <= 3 and $max_i == 1 and $max >= $identity) {
 			print ">> SELECT LONG TSD: score $max => $list->[$ncopy]\n";
 			last;
 		}
