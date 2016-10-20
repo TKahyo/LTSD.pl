@@ -1,6 +1,5 @@
 #!/usr/local/bin/perl
 
-
 #####################################################
 # Estimating putative TSDs from LTR-retrotransposon list.
 # this.pl -gf genome.fa -gn genome_num.txt -i HERVint.bed -tc t_coffee -flank flankBed -fasta fastaFromBed [other_options] LTR_list.bed
