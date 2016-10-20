@@ -210,7 +210,7 @@ while(<$in>){
 	chomp;
 	my $count = 0;
 	my ($first_col, $tsd) = (split /\t/, $_)[0,1];
-	my ($hg19,$score) = (split /\|/, $first_col)[3,4]; 
+	my $score = (split /\|/, $first_col)[4]; 
 	if(!defined $tsd) {
 		print $_,"\n";
 	}
@@ -218,7 +218,7 @@ while(<$in>){
 		$count++;
 	}
 	print $out "$_\t$count\n";
-	if(($score >= $iscore and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) or $hg19 eq 'Tsd') {
+	if(((defined $score and $score >= $iscore) and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) or $first_col =~ /Tsd/) {
 		print $out2 "$_\t$count\n";
 	}
 }
