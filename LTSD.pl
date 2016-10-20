@@ -25,13 +25,13 @@ my $start_time = (time())[0];
 print $0, "\n";
 
 # Default path setting
-my $genome_fa = '/home/genome/hg19/genome.fa';
-my $flankbed= '/usr/local/src/BEDTools-Version-2.13.3/bin/flankBed';
-my $fastaFromBed = '/usr/local/src/BEDTools-Version-2.13.3/bin/fastaFromBed';
-my $genome_num = '/home/genome/hg19/genome.num';
-my $t_coffee = '/usr/local/src/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64/bin/t_coffee';
+my $genome_fa;
+my $flankbed;
+my $fastaFromBed;
+my $genome_num;
+my $t_coffee;
 my $int;
-my $gene_name = '/home/genome/hg19/gene_names.bed'; # optional
+my $gene_name; # optional
 
 my $th = 1;		# number of threads
 my $s_col = 4; 		# strand column
