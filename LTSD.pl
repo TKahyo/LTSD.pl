@@ -48,6 +48,7 @@ my $thresh_LTR_length = 4;
 my $gap_LTR_int_min = -1;
 my $gap_LTR_int_max = 100;
 my $thresh_score_proviral_TSD = 0.5;
+my $iden_ratio = 0.75;
 
 
 my $bed_file = shift @ARGV;
@@ -216,7 +217,7 @@ while(<$in>){
 		$count++;
 	}
 	print $out "$_\t$count\n";
-	if(((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) {
+	if($score >= 0.75 and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) {
 		print $out2 "$_\t$count\n";
 	}
 }
@@ -226,7 +227,7 @@ close $out2;
 
 
 system("mv $save1 $save");
-print "> 1st column: LTR_inf|SOLO/PRE/paired-LTRs_inf|TSD-insert-TSD_inf|Present/Tsd\n";
+print "> 1st column: LTR_inf|SOLO/PRE/paired-LTRs_inf|TSD-insert-TSD_inf|Present/Tsd|identity\n";
 print "> The other columns: TSD_seq\tLeft_flanking_seq\tRight_flanking_seq\tDistance_to_Gene\tGene\tDirection\tDistance_to_Gene\tGene\tDirection\tN_count_of_TSD\n";
 print "> OUTPUT: tsd_results.txt and tsd_results_fil.txt\n";
 
@@ -291,6 +292,7 @@ sub body {
 		my $second = $tsd_seqR;
 		my ($chr2, $start2, $end2, $strand2);
 		my $end3;
+		my $score;
 		
 		open my $it, '>', $input_tsd or die $!;
 		while(1) {
@@ -307,7 +309,7 @@ sub body {
 			
 			# SOLO
 			if(!exists $list[$n+$add] or $strand !~ /[-+]/ or $ltr_side == 2 or $ltr_side == 4) {
-				($tsd, $tsd_1, $tsd_2) = @{&tsd($first, $second, \@list, $ncopy, $dir_i)}[0,2,3];
+				($tsd, $score, $tsd_1, $tsd_2) = @{&tsd($first, $second, \@list, $ncopy, $dir_i)};
 				#print "A: Side=$ltr_side => $tsd_1\t$tsd_2\n";
 				$add--;
 				last;
@@ -318,13 +320,13 @@ sub body {
 			my $distance_partner = $start2 - $end;
 			my $partner_index = 1;
 			if($strand2 !~ /[-+]/) {
-				($tsd, $tsd_1, $tsd_2) = @{&tsd($first, $second, \@list, $ncopy, $dir_i)}[0,2,3];
+				($tsd, $score, $tsd_1, $tsd_2) = @{&tsd($first, $second, \@list, $ncopy, $dir_i)};
 				#print "A: Side=$ltr_side => $tsd_1\t$tsd_2\n";
 				$add--;
 				last;
 			}
 			my $tsd_next = $tsd_data->{$list[$n+$add]}[$partner_index]; # right flanking sequence of partner_LTR
-			my ($decision, $score);
+			my $decision;
 			($decision, $score, $tsd_1, $tsd_2) = @{&tsd($first, $second, \@list, $ncopy, $dir_i)};
 			# if($tsd_1 =~ /ND/) {
 				# print ":::ND\n";
@@ -396,7 +398,7 @@ sub body {
 			if(defined $gene_name) {
 				$distance_inf = join "\t", @{&distance($gene_name, $tr, $ltr_side)};
 			}
-			print $o "|$status|$tr|$hg19\t$tsd\t$tsd_1\t$tsd_2\t$distance_inf\n";
+			print $o "|$status|$tr|$hg19|$score\t$tsd\t$tsd_1\t$tsd_2\t$distance_inf\n";
 		} elsif($solo_flag != 1) {
 			if($tsd ne 'ND' and $tsd ne 'UC') {
 				$tsd_chr = $chr;
@@ -422,7 +424,7 @@ sub body {
 			if(defined $gene_name) {
 				$distance_inf = join "\t", @{&distance($gene_name, $tr, $ltr_side)};
 			}
-			print $o "|$list[$n+$add]|$tr|$hg19|\t$tsd\t$tsd_1\t$tsd_2\t$distance_inf\n";
+			print $o "|$list[$n+$add]|$tr|$hg19|$score\t$tsd\t$tsd_1\t$tsd_2\t$distance_inf\n";
 		}
 	}
 	close $o;
@@ -501,7 +503,7 @@ sub tsd {
 		
 		push @{$hash_max_seq->{$n}}, ($max_seq1, $max_seq2);
 		## processing in the case of $n<=3 && $max_1==1
-		if($n <= 3 and $max_i == 1 and $max >= 0.75) {
+		if($n <= 3 and $max_i == 1 and $max >= $iden_ratio) {
 			print ">> SELECT LONG TSD: score $max => $list->[$ncopy]\n";
 			last;
 		}
