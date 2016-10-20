@@ -66,7 +66,7 @@
 *required options
 
 ##Demo
-Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory.  
+Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory. LTR5_Hs_619.bed includes known LTR5_Hs data on autosomes.  
 
     perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
 
