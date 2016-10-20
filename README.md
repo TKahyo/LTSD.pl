@@ -72,7 +72,7 @@ Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included 
 
 It took about 12 minutes under the condition of Intel i7-3930K CPU @ 3.20GHz multi cores and 64GB  memory.
 
-Two result files are obtained.  
+Two result files are generated.  
 
 * tsd\_results.txt  
     Putative TSD sequences estimated from LTR\_list.bed.  
