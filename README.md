@@ -66,7 +66,7 @@
 *required options
 
 ##Demo
-Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory except chr19.fa (58MB). LTR5_Hs_619.bed includes known LTR5_Hs data on autosomes.  
+Demo datasets for LTR5_Hs/LTR5 on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory except chr19.fa (58MB). LTR5_Hs_619.bed includes known LTR5_Hs/LTR5 data on autosomes.  
 
     perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn hg19_genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
 
@@ -81,4 +81,4 @@ Two result files are generated.
     
 These files are included 'DEMO/results' directory.  
 1st column: LTR\_inf | SOLO/PRE/paired-LTRs\_inf | TSD-insert-TSD\_inf | Present/Tsd | Score.  
-The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]    [Distance\_to\_Gene]    [Gene]    [Direction]    [Distance\_to\_Gene]    [Gene]    [Direction]    [N\_count\_of\_TS].
+The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]    [Distance\_to\_Gene]    [Gene]    [Direction]    [Distance\_to\_Gene]    [Gene]    [Direction]    [N\_count\_of\_TSD].
