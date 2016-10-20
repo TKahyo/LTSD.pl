@@ -43,7 +43,7 @@
     perl LTSD.pl -gf /path/genome.fa -gn /path/genome_num.txt -i /path/ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed [other_options] /path/LTR_list.bed  
 
 #####Options
--h|--help　　print help.  
+-h|--help　　print help  
 
 -b　　Maximum of flanking sequence lengths (default 30)
 
