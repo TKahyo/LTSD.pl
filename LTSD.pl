@@ -68,7 +68,7 @@ system("sort -V -k 1,1 -k 2,2n $bed_file >$bed_file_sorted");
 print "> Importing bed_data...\n";
 my @data_th; # (thread_0_hash, thread_1_hash, ... ); hash->{$key} = \@content; 
 my @list_th; # (thread_0_array, thread_1_array, ... ); array = (key1, key2, ...)
-# e.g. LTR data (13 rows) => thread_0: 1~5, thread_1: 5=8, thread_3: 9~12 (in the case of $th=3)  
+# e.g. LTR data (13 rows) => thread_0: 1~5, thread_1: 5~8, thread_3: 9~12 (in the case of $th=3)  
 my $wc = `wc -l $bed_file_sorted | cut -f1 -d' '`;
 chomp($wc);
 my @nnn; # number list of distributed data
