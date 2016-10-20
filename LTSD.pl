@@ -293,7 +293,7 @@ sub body {
 		my $second = $tsd_seqR;
 		my ($chr2, $start2, $end2, $strand2);
 		my $end3;
-		my $score;
+		my $score = 'ND';
 		
 		open my $it, '>', $input_tsd or die $!;
 		while(1) {
