@@ -206,6 +206,7 @@ print "> Filtering ...\n";
 open my $out2, '>', $save2 or die $!;
 open my $out, '>', $save1 or die $!;
 open my $in, '<', $save or die $!;
+my $count_pro = 0;
 while(<$in>){
 	chomp;
 	my $count = 0;
@@ -218,7 +219,14 @@ while(<$in>){
 		$count++;
 	}
 	print $out "$_\t$count\n";
-	if(((defined $score and $score >= $iscore) and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) or $first_col =~ /Tsd/) {
+	
+	## provirus
+	if($_ =~ /provirus/) {
+		$count_pro++;
+		next;
+	}
+	
+	if(($score >= $iscore and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) or $first_col =~ /Tsd/) {
 		print $out2 "$_\t$count\n";
 	}
 }
@@ -228,6 +236,7 @@ close $out2;
 
 
 system("mv $save1 $save");
+print "PROVIRUS: $count_pro\n";
 print "> 1st column: LTR_inf|SOLO/PRE/paired-LTRs_inf|TSD-insert-TSD_inf|Present/Tsd|Score\n";
 print "> The other columns: TSD_seq\tLeft_flanking_seq\tRight_flanking_seq\tDistance_to_Gene\tGene\tDirection\tDistance_to_Gene\tGene\tDirection\tN_count_of_TSD\n";
 print "> OUTPUT: tsd_results.txt and tsd_results_fil.txt\n";
