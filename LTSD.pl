@@ -545,10 +545,12 @@ sub tsd {
 sub scoring {
 	my ($t1, $t2) = @_;
 	my $score = 0;
+	my $nt_num = 0;
 	
 	my $longer = length($t2);
 	$longer = length($t1) if(length($t1) > length($t2));
 	foreach(my $j = 0; $j < $longer; $j++) {
+		$nt_num++;
 		my $m = - ($longer - $j);
 		my $t1_base = substr($t1, $m, 1); 
 		my $t2_base = substr($t2, $j, 1); 
@@ -560,11 +562,10 @@ sub scoring {
 		#	$score += 0;
 		} elsif($t1_base =~ /-/ or $t2_base =~ /-/) {
 			$score -= 1; # gap penalty
+			$nt_num--;
 		}
 	}
-	(my $raw_seq = $t2) =~ s/-//g;
-	my $raw_len = length($raw_seq);
-	$score = $score/$raw_len;
+	$score = $score/$nt_num;
 	return $score;
 }
 
