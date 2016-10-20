@@ -218,7 +218,7 @@ while(<$in>){
 		$count++;
 	}
 	print $out "$_\t$count\n";
-	if($score >= 0.75 and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) {
+	if($score >= $iden_ratio and ((length($tsd) >=4 and length($tsd) <= 10 and $count <=1) or (length($tsd) >=11 and length($tsd) <=20 and $count <=2) or (length($tsd) >=21 and $count <=3)) and $tsd !~ /provirus/) {
 		print $out2 "$_\t$count\n";
 	}
 }
