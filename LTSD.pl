@@ -556,10 +556,10 @@ sub scoring {
 		# print "$t1\n$t2\n\n";
 		if($t1_base =~ /^$t2_base$/i) { ;
 			$score++;
-		} elsif($t1_base !~ /-/ and $t2_base !~ /-/) {
-			$score--;
-		} else {
-			$score -= 2; # gap
+		#} elsif($t1_base !~ /-/ and $t2_base !~ /-/) {
+		#	$score += 0;
+		} elsif($t1_base =~ /-/ or $t2_base =~ /-/) {
+			$score -= 2; # gap penalty
 		}
 	}
 	(my $raw_seq = $t2) =~ s/-//g;
