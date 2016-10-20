@@ -2,7 +2,7 @@
 
 #####################################################
 # Estimating putative TSDs from LTR-retrotransposon list.
-# this.pl -gf genome.fa -gn genome_num.txt -i HERVint.bed -tc t_coffee -flank flankBed -fasta fastaFromBed [other_options] LTR_list.bed
+# perl LTSD.pl -gf genome.fa -gn genome_num.txt -i HERVint.bed -tc t_coffee -flank flankBed -fasta fastaFromBed [other_options] LTR_list.bed
 # Below tools and data are required in this script.
 # [1] Reference genome (.fa)
 # [2] bedtools
