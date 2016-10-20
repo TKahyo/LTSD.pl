@@ -66,9 +66,10 @@
 *required options
 
 ##Demo
-Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory. LTR5_Hs_619.bed includes known LTR5_Hs data on autosomes.  
+Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory except chr19.fa (58MB). LTR5_Hs_619.bed includes known LTR5_Hs data on autosomes.  
 
-    perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
+1. Example 1  
+    perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn hg19_genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
 
 It took about 12 minutes under the condition of Intel i7-3930K CPU @ 3.20GHz multi cores and 64GB  memory.
 
@@ -80,9 +81,10 @@ Two result files are obtained.
     Putative TSD sequences filtered by a criteria.  
     
 These files are included 'DEMO/results' directory.  
-
 1st column: LTR\_inf | SOLO/PRE/paired-LTRs\_inf | TSD-insert-TSD\_inf | Present/Tsd | Score.  
 The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]    [Distance\_to\_Gene]    [Gene]    [Direction]    [Distance\_to\_Gene]    [Gene]    [Direction]    [N\_count\_of\_TS].
 
-
-
+2. Example 2
+    perl LTSD.pl -b 500 -t 6 -gf autosomes.fa -gn hg19_genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_619.bed  
+    
+It took about 11 hours under the condition of Intel i7-3930K CPU @ 3.20GHz multi cores and 64GB  memory.
