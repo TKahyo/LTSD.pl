@@ -81,7 +81,7 @@ Two result files are obtained.
     
 These files are included 'DEMO/results' directory.  
 
-1st column: LTR\_inf | SOLO/PRE/paired-LTRs\_inf | TSD-insert-TSD\_inf | Present/Tsd | Identity.  
+1st column: LTR\_inf | SOLO/PRE/paired-LTRs\_inf | TSD-insert-TSD\_inf | Present/Tsd | Score.  
 The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]    [Distance\_to\_Gene]    [Gene]    [Direction]    [Distance\_to\_Gene]    [Gene]    [Direction]    [N\_count\_of\_TS].
 
 
