@@ -70,7 +70,7 @@ Demo datasets for LTR5_Hs on the human chromosome 19 (GRCh37/hg19) are included 
 
     perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
 
-It took about 13 minutes under the condition of Intel i7-3930K CPU @ 3.20GHz multi cores and 64GB  memory.
+It took about 10 minutes under the condition of Intel i7-3930K CPU @ 3.20GHz multi cores and 64GB  memory.
 
 Two result files are obtained.  
 
