@@ -209,7 +209,8 @@ open my $in, '<', $save or die $!;
 while(<$in>){
 	chomp;
 	my $count = 0;
-	my $tsd = (split /\t/, $_)[1];
+	my ($first_col, $tsd) = (split /\t/, $_)[0,1];
+	my $score = (split /\|/, $first_col)[4]; 
 	if(!defined $tsd) {
 		print $_,"\n";
 	}
