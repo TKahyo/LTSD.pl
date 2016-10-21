@@ -31,14 +31,6 @@
     chr1    79792628    79792633    -    pre  
         ...  
 
-* Gene list data (Gene\_list.bed, optional): [chromName] [TAB] [Start] [TAB] [End] [TAB] [GeneName] [TAB] [Strand].  
-
-#  
-    chr1    66999824    67210768    SGIP1    +  
-    chr1    48998526    50489626    AGBL4    -  
-        ...  
-
-
 ##Demo
 Demo datasets for LTR5_Hs/LTR5 on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory except chr19.fa (58MB). LTR5_Hs_619.bed includes known LTR5_Hs/LTR5 data on autosomes.  
 
@@ -68,7 +60,14 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
 
 *-flank|-fasta　　flankBed and fastaFromBed paths
 
-*-gene　　File path of Gene\_list.bed
+-gene　　File path of Gene\_list.bed
+
+* Gene list data (Gene\_list.bed, optional): [chromName] [TAB] [Start] [TAB] [End] [TAB] [GeneName] [TAB] [Strand].  
+
+#  
+    chr1    66999824    67210768    SGIP1    +  
+    chr1    48998526    50489626    AGBL4    -  
+        ...  
 
 *-gf　　File path of genome.fasta
 
