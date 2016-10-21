@@ -58,7 +58,7 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
 
 -b　　Maximum of flanking sequence lengths (default 30)
 
-*-flank|-fasta　　flankBed and fastaFromBed paths
+-flank\*|-fasta\*　　flankBed and fastaFromBed paths
 
 -gene　　File path of Gene\_list.bed: [chromName] [TAB] [Start] [TAB] [End] [TAB] [GeneName] [TAB] [Strand].  
 
@@ -67,16 +67,16 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
     chr1    48998526    50489626    AGBL4    -  
         ...  
 
-*-gf　　File path of genome.fasta
+-gf\*　　File path of genome.fasta
 
-*-gn　　File path of genome\_num.txt
+-gn\*　　File path of genome\_num.txt
 
-*-i　　File path of ORF\_list.bed
+-i\*　　File path of ORF\_list.bed
 
 -s|-m　　Column numbers of strand and insert/pre in the LTR\_list.bed (default -s 4 -m 5)
 
 -t　　Thread number (default -t 1)
 
-*-tc　　T-Cofee path
+-tc\*　　T-Cofee path
 
-*required options
+*required
