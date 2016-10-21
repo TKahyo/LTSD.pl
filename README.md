@@ -4,11 +4,11 @@
 #####LTSD.pl is a Perl script to estimate putative target site duplications (TSDs) of LTR-retrotransposons. 
   
 ##Requirement
-#####1. Tools  
+####1. Tools  
 * BEDtools (flankBed and fastaFromBed): [Quinlan Lab at the University of Utah](http://bedtools.readthedocs.io/en/latest/)	v2.25.0 or later.  
 * T-Coffee: [Notredame Lab, Comparative Bioinformatics Group at the Bioinformatics and Genomics Programme Center for Genomic Regulation](http://www.tcoffee.org/Projects/tcoffee/#Download) Version 11.00.8cbe486 or later  
 
-#####2. Data sets  
+####2. Data sets  
 * Reference genome (genome.fa): Downloadable from [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html)  
 * Chromosome size data (genome\_num.txt): [chromName] [TAB] [chromSize]    
 
