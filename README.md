@@ -60,7 +60,8 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
 
 -flank\*|-fasta\*　　flankBed and fastaFromBed paths
 
--gene　　File path of Gene\_list.bed to annotate neighbor genes: [chromName] [TAB] [Start] [TAB] [End] [TAB] [GeneName] [TAB] [Strand].  
+-gene　　File path of Gene\_list.bed to annotate neighbor genes  
+　　　　　[chromName] [TAB] [Start] [TAB] [End] [TAB] [GeneName] [TAB] [Strand].
 
 #  
     chr1    66999824    67210768    SGIP1    +  
