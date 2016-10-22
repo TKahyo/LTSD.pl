@@ -512,11 +512,6 @@ sub tsd {
 		}
 		
 		push @{$hash_max_seq->{$n}}, ($max_seq1, $max_seq2);
-		## processing in the case of $n<=3 && $max_1==1
-		if($n <= 3 and $max_i == 1 and $max >= $iscore) {
-			print ">> SELECT LONG TSD: score $max => $list->[$ncopy]\n";
-			last;
-		}
 		$max = $max_i if($max < $max_i);
 		$hash->{$n} = $max_i;
 		
