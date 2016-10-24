@@ -4,27 +4,27 @@
 #####LTSD.pl is a Perl script to estimate putative target site duplications (TSDs) of LTR-retrotransposons. 
   
 ##Requirement
-#### Tools  
-#####1. BEDtools (flankBed and fastaFromBed): [Quinlan Lab at the University of Utah](http://bedtools.readthedocs.io/en/latest/)	v2.25.0 or later.  
-#####2. T-Coffee: [Notredame Lab, Comparative Bioinformatics Group at the Bioinformatics and Genomics Programme Center for Genomic Regulation](http://www.tcoffee.org/Projects/tcoffee/#Download) Version 11.00.8cbe486 or later  
+### Tools  
+######1. BEDtools (flankBed and fastaFromBed): [Quinlan Lab at the University of Utah](http://bedtools.readthedocs.io/en/latest/)	v2.25.0 or later.  
+######2. T-Coffee: [Notredame Lab, Comparative Bioinformatics Group at the Bioinformatics and Genomics Programme Center for Genomic Regulation](http://www.tcoffee.org/Projects/tcoffee/#Download) Version 11.00.8cbe486 or later  
 
-#### Data sets  
-#####1. Reference genome (genome.fa): Downloadable from [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html)  
-#####2. Chromosome size data (genome\_num.txt): [chromName] [TAB] [chromSize]    
+### Data sets  
+######1. Reference genome (genome.fa): Downloadable from [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html)  
+######2. Chromosome size data (genome\_num.txt): [chromName] [TAB] [chromSize]    
 
 #  
     chr1    249250621  
     chr2    243199373  
         ...  
 
-#####3. ORF data (ORF\_list.bed): Annotation data of open reading frames (ORFs). Downloadable via RepeatMasker track from the Table Browser in  [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html). In the case of HML-2, HERVK-int should be included.  
+######3. ORF data (ORF\_list.bed): Annotation data of open reading frames (ORFs). Downloadable via RepeatMasker track from the Table Browser in  [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html). In the case of HML-2, HERVK-int should be included.  
 
 #  
     chr1    12840257    12845090    HERVK-int    27617    -  
     chr1    13459295    13460029    HERVK-int    4505     +  
         ...  
 
-#####4. LTR list data (LTR\_list.bed): [chromName] [TAB] [Start] [TAB] [End] [TAB] [+/-] [TAB] [insert]. In the case of HML-2, LTR5_Hs data should be included. If the LTRs absent on the reference genome are added in this list in order to investigate neighbor genes using Gene list data (see below), 'insert' should be replaced to 'pre' in the last column, and TSD genome positions should be written as following:  
+######4. LTR list data (LTR\_list.bed): [chromName] [TAB] [Start] [TAB] [End] [TAB] [+/-] [TAB] [insert]. In the case of HML-2, LTR5_Hs data should be included. If the LTRs absent on the reference genome are added in this list in order to investigate neighbor genes using Gene list data (see below), 'insert' should be replaced to 'pre' in the last column, and TSD genome positions should be written as following:  
 
 #  
     chr1    1345186     1346153     +    insert  
