@@ -59,7 +59,7 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
 -b　　Maximum of flanking sequence lengths (default 30)  
 　　　Minimum is fixed at 4.
 
--flank\*|-fasta\*　　flankBed and fastaFromBed paths
+-flank\*|-fasta\*　　flankBed (-flank) and fastaFromBed (-fasta) paths
 
 -gene　　File path of Gene\_list.bed to annotate neighbor genes  
 　　　　　[chromName] [TAB] [Start] [TAB] [End] [TAB] [GeneName] [TAB] [Strand].
