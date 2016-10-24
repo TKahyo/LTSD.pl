@@ -6,7 +6,7 @@
 ##Requirement
 ### Tools  
  [1] BEDtools (flankBed and fastaFromBed): [Quinlan Lab at the University of Utah](http://bedtools.readthedocs.io/en/latest/)	v2.25.0 or later.  
- [2] T-Coffee: [Notredame Lab, Comparative Bioinformatics Group at the Bioinformatics and Genomics Programme Center for Genomic Regulation](http://www.tcoffee.org/Projects/tcoffee/#Download) Version 11.00.8cbe486 or later  
+ [2] T-Coffee: [Notredame Lab, Comparative Bioinformatics Group at the Bioinformatics and Genomics Programme Center for Genomic Regulation](http://www.tcoffee.org/Projects/tcoffee/#Download) Version 11.00.8cbe486 or later.  
 
 ### Data sets  
  [1] Reference genome (genome.fa): Downloadable from [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html)  
