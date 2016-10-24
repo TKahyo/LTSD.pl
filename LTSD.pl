@@ -236,7 +236,7 @@ close $out2;
 
 
 system("mv $save1 $save");
-print "PROVIRUS: $count_pro\n";
+print "ESTIMATED PROVIRUS: $count_pro\n";
 print "> 1st column: LTR_inf|SOLO/PRE/paired-LTRs_inf|TSD-insert-TSD_inf|Present/Tsd|Score\n";
 print "> The other columns: TSD_seq\tLeft_flanking_seq\tRight_flanking_seq\tDistance_to_Gene\tGene\tDirection\tDistance_to_Gene\tGene\tDirection\tN_count_of_TSD\n";
 print "> OUTPUT: tsd_results.txt and tsd_results_fil.txt\n";
