@@ -9,7 +9,7 @@
 # [3] Genome file utilized for flankbed (<chromName><TAB><chromSize>)
 # [4] T-Coffee
 # [5] LTR list (.bed)	# see README
-# [6] ORF list (.bed)	# from RepeatMasker
+# [6] int list (.bed)	# from RepeatMasker
 # [7] Gene list (.bed)	# optional, see README
 #####################################################
 
@@ -653,7 +653,7 @@ __END__
  
 =head1 SYNOPSIS
  
-B<perl LTSD.pl -gf /path/genome.fa -gn /path/genome_num.txt -i /path/ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed [other_options] /path/LTR_list.bed>
+B<perl LTSD.pl -gf /path/genome.fa -gn /path/genome_num.txt -i /path/int_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed [other_options] /path/LTR_list.bed>
 
 Options: [-h|--help|-b|-gene|-m|-p|-s|-t|-gf*|-gn*|i*|-tc*|-flank*|-fasta*; *required]
 
@@ -687,7 +687,7 @@ File path of genome.num, in which <chromosome> <start> <end> are described.
 
 =item B<-i>
 
-File path of ORF_list.bed
+File path of int_list.bed
 
 =item B<-s|-m>
 
