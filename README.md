@@ -17,7 +17,7 @@
     chr2    243199373  
         ...  
 
- [3] ORF data (ORF\_list.bed): Annotation data of open reading frames (ORFs). Downloadable via RepeatMasker track from the Table Browser in  [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html). In the case of HML-2, HERVK-int should be included.  
+ [3] Internal proviral sequence data (int\_list.bed): Annotation data of the internal provirals. Downloadable via RepeatMasker track from the Table Browser in  [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html). In the case of HML-2, HERVK-int should be included.  
 
 #  
     chr1    12840257    12845090    HERVK-int    27617    -  
@@ -34,7 +34,7 @@
 ##Demo
 Demo datasets for LTR5_Hs/LTR5 on the human chromosome 19 (GRCh37/hg19) are included in the 'DEMO' directory except chr19.fa (58MB). LTR5_Hs_619.bed includes known LTR5_Hs/LTR5 data on autosomes.  
 
-    perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn hg19_genome_num.txt -i ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
+    perl LTSD.pl -b 100 -t 4 -gf chr19.fa -gn hg19_genome_num.txt -i int_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed LTR5_Hs_chr19.bed
 
 It took about 12 minutes under the condition of Intel i7-3930K CPU @ 3.20GHz multi cores and 64GB (DDR3 1333MHz) memory.
 
@@ -51,7 +51,7 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
 
 
 ##Usage
-    perl LTSD.pl -gf /path/genome.fa -gn /path/genome_num.txt -i /path/ORF_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed [other_options] /path/LTR_list.bed  
+    perl LTSD.pl -gf /path/genome.fa -gn /path/genome_num.txt -i /path/int_list.bed -tc /path/t_coffee -flank /path/flankBed -fasta /path/fastaFromBed [other_options] /path/LTR_list.bed  
 
 #####Options
 -h|--help　　print help  
@@ -73,7 +73,7 @@ The other columns: [TSD\_seq]    [Left\_flanking\_seq]    [Right\_flanking\_seq]
 
 -gn\*　　File path of genome\_num.txt
 
--i\*　　File path of ORF\_list.bed
+-i\*　　File path of int\_list.bed
 
 -s|-m　　Column numbers of strand and insert/pre in the LTR\_list.bed (default -s 4 -m 5)
 
