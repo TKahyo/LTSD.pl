@@ -671,23 +671,22 @@ Maximum of flanking sequence lengths.  (default 30)
 
 =item B<-flank|-fasta>
 
-flankBed and fastaFromBed paths
+/path/flankBed (-flank) and /path/fastaFromBed (-fasta)
 
 =item B<-gene>
 
-File path of gene.bed. <chr> <start> <end> <geneName> <strand>
+gene.bed. <chr> <start> <end> <geneName> <strand>
 
 =item B<-gf>
 
-File path of genome.fa.
+genome.fa.
 
 =item B<-gn>
-
-File path of genome.num, in which <chromosome> <start> <end> are described.
+genome.num. <chromosome> <start> <end>
 
 =item B<-i>
 
-File path of int_list.bed
+int_list.bed
 
 =item B<-s|-m>
 
@@ -699,7 +698,7 @@ Thread. (default -t 1)
 
 =item B<-tc>
 
-T-COFFEE path
+/path/T-COFFEE path
 
 =back
 
