@@ -17,14 +17,14 @@
     chr2    243199373  
         ...  
 
- [3] Internal proviral sequence data (int\_list.bed): Annotation data of the internal provirals. Downloadable via RepeatMasker track from the Table Browser in  [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html). In the case of HML-2, HERVK-int should be included.  
+ [3] Internal proviral sequence data (int\_list.bed): Annotation data of the internal provirals. Downloadable via RepeatMasker track from the Table Browser in  [the University of California Santa Cruz (UCSC) Genome Browser](http://genome.ucsc.edu/index.html). In the case of HML-2, HERVK-int should be included. The genomic positions are based on a zero-based start.  
 
 #  
     chr1    12840257    12845090    HERVK-int    27617    -  
     chr1    13459295    13460029    HERVK-int    4505     +  
         ...  
 
- [4] LTR list data (LTR\_list.bed): [chromName] [TAB] [Start] [TAB] [End] [TAB] [+/-] [TAB] [insert]. In the case of HML-2, LTR5_Hs data should be included. If the LTRs absent on the reference genome are added in this list in order to investigate neighbor genes using Gene list data (see below), 'insert' should be replaced to 'pre' in the last column, and TSD genome positions should be written as following:  
+ [4] LTR list data (LTR\_list.bed): [chromName] [TAB] [Start] [TAB] [End] [TAB] [+/-] [TAB] [insert]. In the case of HML-2, LTR5_Hs data should be included. The genomic positions are based on a zero-based start. If the LTRs absent on the reference genome are added in this list in order to investigate neighbor genes using Gene list data (see below), 'insert' should be replaced to 'pre' in the last column, and TSD genome positions should be written as following:  
 
 #  
     chr1    1345186     1346153     +    insert  
